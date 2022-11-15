@@ -1,11 +1,11 @@
 /**********************************************************************************************************************
  *  FILE DESCRIPTION
  *  -----------------------------------------------------------------------------------------------------------------*/
-/**        \file  	main.c
- *		   \date	15/11/2022
- *        \brief	It has the main function
-*		  \email 	ahmedhesham606@icloud.com
- *		 \author	Ahmad Hesham	
+/**    	\file  			main.c
+ *			\date				15/11/2022
+ *      \brief			It has the main function
+ *		  \email 			ahmedhesham606@icloud.com
+ *		 	\author			Ahmad Hesham	
  *      \details  
  *
  *
