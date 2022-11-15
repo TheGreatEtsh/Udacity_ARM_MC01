@@ -9,14 +9,15 @@
  *		\author			Ahmad Hesham
  *		\description
  *********************************************************************************************************************/
-#ifndef <M_GPIO_INTERFACE_H>
-#define <M_GPIO_INTERFACE_H>
+#ifndef M_GPIO_INTERFACE_H
+#define M_GPIO_INTERFACE_H
 
 /**********************************************************************************************************************
  * INCLUDES
  *********************************************************************************************************************/
 #include "StandardTypes.h"
 #include "M_GPIO_Configurations.h"
+#include "L_BitMath.h"
 
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
@@ -32,7 +33,128 @@
 /**********************************************************************************************************************
  *  GLOBAL DATA TYPES AND STRUCTURES
  *********************************************************************************************************************/
-
+/*OPTIONS FOR PINS MODE*/
+typedef enum {
+	DIO = 0,
+	U0Rx = 1,
+	U0Tx = 1,
+	PB0_U1Rx = 1,
+	PB1_U1Tx = 1,
+	TCK_SWCLK = 1,
+	TMS_SWDIO = 1,
+	TDI = 1,
+	TDO_SWO = 1,
+	U4Rx = 1,
+	U4Tx = 1,
+	U3Rx = 1,
+	U3Tx = 1,
+	SSI3CLK = 1,
+	SSI3Fss = 1,
+	SSI3Rx = 1,
+	SSI3Tx = 1,
+	U6Rx = 1,
+	U6Tx = 1,
+	U2Rx = 1,
+	U2Tx = 1,
+	U7Rx = 1,
+	U7Tx = 1,
+	U5Rx = 1,
+	U5Tx = 1,
+	U1RTS = 1,
+	U1CTS = 1,
+	SSI0CLK = 2,
+	SSI0Fss = 2,
+	SSI0Rx = 2,
+	SSI0Tx = 2,
+	SSI2CLK = 2,
+	SSI2Fss = 2,
+	SSI2Rx = 2,
+	SSI2Tx = 2,
+	PC4_U1Rx = 2,
+	PC5_U1Tx = 2,
+	SSI1CLK = 2,
+	SSI1Fss = 2,
+	SSI1Rx = 2,
+	SSI1Tx = 2,
+	/*PF1_SSI1CLK	= 2,
+	PF2_SSI1Fss	= 2,
+	PF3_SSI1Rx	= 2,
+	PF4_SSI1Tx	= 2,*/
+	I2C1SCL = 3,
+	I2C1SDA = 3,
+	I2C0SCL = 3,
+	I2C0SDA = 3,
+	I2C3SCL = 3,
+	I2C3SDA = 3,
+	I2C2SCL = 3,
+	I2C2SDA = 3,
+	CAN0Rx = 3,
+	CAN0Tx = 3,
+	M0FAULT0 = 4,
+	M0PWM5 = 4,
+	M0PWM4 = 4,
+	M0PWM7 = 4,
+	M0PWM6 = 4,
+	M0PWM3 = 4,
+	M0PWM2 = 4,
+	M0PWM1 = 4,
+	M0PWM0 = 4,
+	M1FAULT0 = 5,
+	M1PWM5 = 5,
+	M1PWM4 = 5,
+	M1PWM7 = 5,
+	M1PWM6 = 5,
+	M1PWM3 = 5,
+	M1PWM2 = 5,
+	M1PWM1 = 5,
+	M1PWM0 = 5,
+	IDX0 = 6,
+	PhA0 = 6,
+	PhB0 = 6,
+	IDX1 = 6,
+	PhA1 = 6,
+	PhB1 = 6,
+	T2CCP0 = 7,
+	T2CCP1 = 7,
+	T3CCP0 = 7,
+	T3CCP1 = 7,
+	T1CCP0 = 7,
+	T1CCP1 = 7,
+	T0CCP0 = 7,
+	T0CCP1 = 7,
+	T4CCP0 = 7,
+	T4CCP1 = 7,
+	T5CCP0 = 7,
+	T5CCP1 = 7,
+	WT2CCP0 = 7,
+	WT2CCP1 = 7,
+	WT3CCP0 = 7,
+	WT3CCP1 = 7,
+	WT1CCP0 = 7,
+	WT1CCP1 = 7,
+	WT0CCP0 = 7,
+	WT0CCP1 = 7,
+	WT4CCP0 = 7,
+	WT4CCP1 = 7,
+	WT5CCP0 = 7,
+	WT5CCP1 = 7,
+	USB0EPEN = 8,
+	NMI = 8,
+	PE4_CAN0 = 8,
+	PE5_CAN0 = 8,
+	USB0PFLT = 8,
+	PC4_U1RT = 8,
+	PC5_U1CT = 8,
+	PB4_CAN0 = 8,
+	PB5_CAN0 = 8,
+	CAN1Rx = 8,
+	CAN1Tx = 8,
+	C0o = 9,
+	C1o = 9,
+	TRD1 = 14,
+	TRD0 = 14,
+	TRCLK = 14
+}Port_PinModeType;
 
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
@@ -43,7 +165,9 @@
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
 
- 
+ void M_GPIO_init(void);
+
+
 #endif  /* M_GPIO_INTERFACE_H */
 
 /**********************************************************************************************************************

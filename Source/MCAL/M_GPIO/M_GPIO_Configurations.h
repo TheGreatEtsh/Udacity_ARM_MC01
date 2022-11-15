@@ -9,8 +9,8 @@
  *		\author			Ahmad Hesham
  *		\description
  *********************************************************************************************************************/
-#ifndef <M_GPIO_CONFIGURATIONS_H>
-#define <M_GPIO_CONFIGURATIONS_H>
+#ifndef M_GPIO_CONFIGURATIONS_H
+#define M_GPIO_CONFIGURATIONS_H
 
 /**********************************************************************************************************************
  * INCLUDES

@@ -8,8 +8,8 @@
  *		\author			Ahmad Hesham
  *		\description
  *********************************************************************************************************************/
-#ifndef <STANDARD_TYPES_H>
-#define <STANDARD_TYPES_H>
+#ifndef STANDARD_TYPES_H
+#define STANDARD_TYPES_H
 
 /**********************************************************************************************************************
  * INCLUDES
@@ -38,8 +38,8 @@ typedef unsigned	short	u16_t;			/*   0   to +65535*/
 typedef signed		long	s32_t;
 typedef unsigned	long	u32_t;
 
-typedef signed		float	f32_t;
-typedef unsigned	double	f64_t;
+typedef				float	f32_t;
+typedef				double	f64_t;
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
  *********************************************************************************************************************/

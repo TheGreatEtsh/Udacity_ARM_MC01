@@ -50,7 +50,7 @@
 *******************************************************************************/
 void M_GPIO_init(void)
 {
-	RCGCGPIO |= CLK_GTE_CTRL_VALUE;		/*Assign GPIO's clock gate configurations to RCGCGPIO register*/
+	RCGCGPIO |= (u32_t) CLK_GTE_CTRL_VALUE;		/*Assign GPIO's clock gate configurations to RCGCGPIO register*/
 
 
 }

@@ -1,9 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\APPLICATION",
+    "\\HAL",
+    "\\LIBRARIES",
     "\\MCAL",
-    "\\MCAL\\M_GPIO"
+    "\\MCAL\\M_GPIO",
+    "\\SERVICE"
   ],
-  "SelectedNode": "\\MCAL\\M_GPIO\\M_GPIO_Private.h",
   "PreviewInSolutionExplorer": false
 }
