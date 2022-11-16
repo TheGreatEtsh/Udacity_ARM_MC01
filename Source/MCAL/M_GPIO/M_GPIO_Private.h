@@ -59,17 +59,68 @@
 #define GPIOAFSELE		(*((volatile u32_t*) (GPIOPORTE_APB_BASE_ADDRESS+0x420)))
 #define GPIOAFSELF		(*((volatile u32_t*) (GPIOPORTF_APB_BASE_ADDRESS+0x420)))
 
-#define GPIOPCTLA		*((volatile *u32_t) (GPIOPORTA_APB_BASE_ADDRESS+0x52C))
-#define GPIOPCTLB		*((volatile *u32_t) (GPIOPORTB_APB_BASE_ADDRESS+0x52C))
-#define GPIOPCTLC		*((volatile *u32_t) (GPIOPORTC_APB_BASE_ADDRESS+0x52C))
-#define GPIOPCTLD		*((volatile *u32_t) (GPIOPORTD_APB_BASE_ADDRESS+0x52C))
-#define GPIOPCTLE		*((volatile *u32_t) (GPIOPORTE_APB_BASE_ADDRESS+0x52C))
-#define GPIOPCTLF		*((volatile *u32_t) (GPIOPORTF_APB_BASE_ADDRESS+0x52C))
+#define GPIODENA		(*((volatile u32_t*) (GPIOPORTA_APB_BASE_ADDRESS+0x51C)))
+#define GPIODENB		(*((volatile u32_t*) (GPIOPORTB_APB_BASE_ADDRESS+0x51C)))
+#define GPIODENC		(*((volatile u32_t*) (GPIOPORTC_APB_BASE_ADDRESS+0x51C)))
+#define GPIODEND		(*((volatile u32_t*) (GPIOPORTD_APB_BASE_ADDRESS+0x51C)))
+#define GPIODENE		(*((volatile u32_t*) (GPIOPORTE_APB_BASE_ADDRESS+0x51C)))
+#define GPIODENF		(*((volatile u32_t*) (GPIOPORTF_APB_BASE_ADDRESS+0x51C)))
+
+#define GPIOPCTLA		(*((volatile u32_t*) (GPIOPORTA_APB_BASE_ADDRESS+0x52C)))
+#define GPIOPCTLB		(*((volatile u32_t*) (GPIOPORTB_APB_BASE_ADDRESS+0x52C)))
+#define GPIOPCTLC		(*((volatile u32_t*) (GPIOPORTC_APB_BASE_ADDRESS+0x52C)))
+#define GPIOPCTLD		(*((volatile u32_t*) (GPIOPORTD_APB_BASE_ADDRESS+0x52C)))
+#define GPIOPCTLE		(*((volatile u32_t*) (GPIOPORTE_APB_BASE_ADDRESS+0x52C)))
+#define GPIOPCTLF		(*((volatile u32_t*) (GPIOPORTF_APB_BASE_ADDRESS+0x52C)))
+
+#define GPIODR2RA		(*((volatile u32_t*) (GPIOPORTA_APB_BASE_ADDRESS+0x500)))
+#define GPIODR2RB		(*((volatile u32_t*) (GPIOPORTB_APB_BASE_ADDRESS+0x500)))
+#define GPIODR2RC		(*((volatile u32_t*) (GPIOPORTC_APB_BASE_ADDRESS+0x500)))
+#define GPIODR2RD		(*((volatile u32_t*) (GPIOPORTD_APB_BASE_ADDRESS+0x500)))
+#define GPIODR2RE		(*((volatile u32_t*) (GPIOPORTE_APB_BASE_ADDRESS+0x500)))
+#define GPIODR2RF		(*((volatile u32_t*) (GPIOPORTF_APB_BASE_ADDRESS+0x500)))
+ 
+#define GPIODR4RA		(*((volatile u32_t*) (GPIOPORTA_APB_BASE_ADDRESS+0x504)))
+#define GPIODR4RB		(*((volatile u32_t*) (GPIOPORTB_APB_BASE_ADDRESS+0x504)))
+#define GPIODR4RC		(*((volatile u32_t*) (GPIOPORTC_APB_BASE_ADDRESS+0x504)))
+#define GPIODR4RD		(*((volatile u32_t*) (GPIOPORTD_APB_BASE_ADDRESS+0x504)))
+#define GPIODR4RE		(*((volatile u32_t*) (GPIOPORTE_APB_BASE_ADDRESS+0x504)))
+#define GPIODR4RF		(*((volatile u32_t*) (GPIOPORTF_APB_BASE_ADDRESS+0x504)))
+
+#define GPIODR8RA		(*((volatile u32_t*) (GPIOPORTA_APB_BASE_ADDRESS+0x508)))
+#define GPIODR8RB		(*((volatile u32_t*) (GPIOPORTB_APB_BASE_ADDRESS+0x508)))
+#define GPIODR8RC		(*((volatile u32_t*) (GPIOPORTC_APB_BASE_ADDRESS+0x508)))
+#define GPIODR8RD		(*((volatile u32_t*) (GPIOPORTD_APB_BASE_ADDRESS+0x508)))
+#define GPIODR8RE		(*((volatile u32_t*) (GPIOPORTE_APB_BASE_ADDRESS+0x508)))
+#define GPIODR8RF		(*((volatile u32_t*) (GPIOPORTF_APB_BASE_ADDRESS+0x508)))
+
+#define GPIOODRA		(*((volatile u32_t*) (GPIOPORTA_APB_BASE_ADDRESS+0x50C)))
+#define GPIOODRB		(*((volatile u32_t*) (GPIOPORTB_APB_BASE_ADDRESS+0x50C)))
+#define GPIOODRC		(*((volatile u32_t*) (GPIOPORTC_APB_BASE_ADDRESS+0x50C)))
+#define GPIOODRD		(*((volatile u32_t*) (GPIOPORTD_APB_BASE_ADDRESS+0x50C)))
+#define GPIOODRE		(*((volatile u32_t*) (GPIOPORTE_APB_BASE_ADDRESS+0x50C)))
+#define GPIOODRF		(*((volatile u32_t*) (GPIOPORTF_APB_BASE_ADDRESS+0x50C)))
+
+#define GPIOPURA		(*((volatile u32_t*) (GPIOPORTA_APB_BASE_ADDRESS+0x510)))
+#define GPIOPURB		(*((volatile u32_t*) (GPIOPORTB_APB_BASE_ADDRESS+0x510)))
+#define GPIOPURC		(*((volatile u32_t*) (GPIOPORTC_APB_BASE_ADDRESS+0x510)))
+#define GPIOPURD		(*((volatile u32_t*) (GPIOPORTD_APB_BASE_ADDRESS+0x510)))
+#define GPIOPURE		(*((volatile u32_t*) (GPIOPORTE_APB_BASE_ADDRESS+0x510)))
+#define GPIOPURF		(*((volatile u32_t*) (GPIOPORTF_APB_BASE_ADDRESS+0x510)))
+
+#define GPIOPDRA		(*((volatile u32_t*) (GPIOPORTA_APB_BASE_ADDRESS+0x514)))
+#define GPIOPDRB		(*((volatile u32_t*) (GPIOPORTB_APB_BASE_ADDRESS+0x514)))
+#define GPIOPDRC		(*((volatile u32_t*) (GPIOPORTC_APB_BASE_ADDRESS+0x514)))
+#define GPIOPDRD		(*((volatile u32_t*) (GPIOPORTD_APB_BASE_ADDRESS+0x514)))
+#define GPIOPDRE		(*((volatile u32_t*) (GPIOPORTE_APB_BASE_ADDRESS+0x514)))
+#define GPIOPDRF		(*((volatile u32_t*) (GPIOPORTF_APB_BASE_ADDRESS+0x514)))
+
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
  *********************************************************************************************************************/
 /*#define CLK_GTE_CTRL_VALUE (0b##PORTF_CLK_GTE_CTRL##PORTE_CLK_GTE_CTRL##PORTD_CLK_GTE_CTRL##PORTC_CLK_GTE_CTRL##PORTB_CLK_GTE_CTRL##PORTA_CLK_GTE_CTRL)*/
+
 #define CLK_GTE_CTRL_VALUE BIT_CONC(0,0,PORTF_CLK_GTE_CTRL,PORTE_CLK_GTE_CTRL,PORTD_CLK_GTE_CTRL,PORTC_CLK_GTE_CTRL,PORTB_CLK_GTE_CTRL,PORTA_CLK_GTE_CTRL)
 /**********************************************************************************************************************
  *  GLOBAL DATA TYPES AND STRUCTURES

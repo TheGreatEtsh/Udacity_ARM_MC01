@@ -7,7 +7,11 @@
  *  	\brief			consist of configurations which users can edit for GPIO peripheral
  *      \email 			ahmedhesham606@icloud.com
  *		\author			Ahmad Hesham
- *		\description
+ *		\description	To use GPIO Channels you have to follow the following steps
+ *						1- check the pin belongs to which port 
+ *						2- Activate clock gate to this port through this file
+ *						3- define a Port_ConfigType for the pin info
+ * 
  *********************************************************************************************************************/
 #ifndef M_GPIO_CONFIGURATIONS_H
 #define M_GPIO_CONFIGURATIONS_H
@@ -15,7 +19,7 @@
 /**********************************************************************************************************************
  * INCLUDES
  *********************************************************************************************************************/
-
+#include "M_GPIO_Interface.h"
 
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
@@ -36,16 +40,19 @@
 
 #define PORTB_CLK_GTE_CTRL		DISABLE_PORT
 
-#define PORTC_CLK_GTE_CTRL		ENABLE_PORT
+#define PORTC_CLK_GTE_CTRL		DISABLE_PORT
 
-#define PORTD_CLK_GTE_CTRL		ENABLE_PORT
+#define PORTD_CLK_GTE_CTRL		DISABLE_PORT
 
-#define PORTE_CLK_GTE_CTRL		ENABLE_PORT
+#define PORTE_CLK_GTE_CTRL		DISABLE_PORT
 
-#define PORTF_CLK_GTE_CTRL		ENABLE_PORT
+#define PORTF_CLK_GTE_CTRL		DISABLE_PORT
 /**********************************************************************************************************************
  *  GLOBAL DATA TYPES AND STRUCTURES
  *********************************************************************************************************************/
+
+
+
 
 
 /**********************************************************************************************************************

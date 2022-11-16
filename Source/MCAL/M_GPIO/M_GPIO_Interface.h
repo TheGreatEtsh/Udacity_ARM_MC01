@@ -16,7 +16,6 @@
  * INCLUDES
  *********************************************************************************************************************/
 #include "StandardTypes.h"
-#include "M_GPIO_Configurations.h"
 #include "L_BitMath.h"
 
 /**********************************************************************************************************************
@@ -24,6 +23,61 @@
  *********************************************************************************************************************/
 #define ENABLE_PORT		1
 #define DISABLE_PORT	0
+
+#define PA0				10
+#define PA1				11
+#define PA2				12
+#define PA3				13
+#define PA4				14
+#define PA5				15
+#define PA6				16
+#define PA7				17
+
+#define PB0				20
+#define PB1				21
+#define PB2				22
+#define PB3				23
+#define PB4				24
+#define PB5				25
+#define PB6				26
+#define PB7				27
+
+#define PC0				30
+#define PC1				31
+#define PC2				32
+#define PC3				33
+#define PC4				34
+#define PC5				35
+#define PC6				36
+#define PC7				37
+
+#define PD0				40
+#define PD1				41
+#define PD2				42
+#define PD3				43
+#define PD4				44
+#define PD5				45
+#define PD6				46
+#define PD7				47
+
+#define PE0				50
+#define PE1				51
+#define PE2				52
+#define PE3				53
+#define PE4				54
+#define PE5				55
+#define PE6				56
+#define PE7				57
+
+#define PF0				60
+#define PF1				61
+#define PF2				62
+#define PF3				63
+#define PF4				64
+#define PF5				65
+#define PF6				66
+#define PF7				67
+
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
@@ -33,8 +87,11 @@
 /**********************************************************************************************************************
  *  GLOBAL DATA TYPES AND STRUCTURES
  *********************************************************************************************************************/
-/*OPTIONS FOR PINS MODE*/
-typedef enum {
+
+/*
+ * Choose DIO, or Alternative Function Select check data sheet page 1351
+ */
+typedef enum Port_PinModeType {
 	DIO = 0,
 	U0Rx = 1,
 	U0Tx = 1,
@@ -156,6 +213,54 @@ typedef enum {
 	TRCLK = 14
 }Port_PinModeType;
 
+/*
+ * GPIO_INPUT OR GPIO_OUTPUT 
+ */
+typedef enum Port_PinDirection {
+	GPIO_INPUT = 0,
+	GPIO_OUTPUT
+}Port_PinDirection;  
+
+/*
+ * GPIO_LOW OR GPIO_HIGH
+ */
+typedef enum Port_Pinlevel {
+	GPIO_LOW = 0,
+	GPIO_HIGH
+}Port_Pinlevel;
+
+/*
+ * GPIO_PULLDOWN, GPIO_PULLUP OR GPIO_OPENDRAIN
+ */
+typedef enum Port_PinInternalAttach {
+	GPIO_PULLDOWN = 0,
+	GPIO_PULLUP,
+	GPIO_OPENDRAIN
+}Port_PinInternalAttach;
+
+/*
+ * GPIO_2mA, GPIO_4mA OR GPIO_8mA
+ */
+typedef enum Port_PinOutputCurrent {
+	GPIO_2mA = 2,
+	GPIO_4mA = 4,
+	GPIO_8mA = 8
+}Port_PinOutputCurrent;
+
+
+typedef struct Pin_ConfigType {
+	u8_t										au8_PinName;				/*PA0, PA1,... Follow this way*/
+	Port_PinModeType				PinModeType;				/*DIO, or Alternative Function Select check data sheet page 1351*/
+	Port_PinDirection				PinDirection;				/*GPIO_INPUT OR GPIO_OUTPUT*/
+	Port_PinInternalAttach	PinInternalAttach;	/*GPIO_PULLDOWN,  GPIO_PULLUP OR GPIO_OPENDRAIN*/
+	Port_PinOutputCurrent		PinOutputCurrent;		/*GPIO_2mA, GPIO_4mA OR GPIO_8mA*/
+}Pin_ConfigType;
+
+Pin_ConfigType		LED0;
+LED0.au8_PinName			= PA0;
+LED0.PinModeType			= DIO;
+LED0.PinDirection			= GPIO_OUTPUT;
+LED0.PinOutputCurrent		= GPIO_2mA;
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
  *********************************************************************************************************************/
@@ -165,7 +270,7 @@ typedef enum {
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
 
- void M_GPIO_init(void);
+ void M_GPIO_init(Pin_ConfigType* ConfigPtr);
 
 
 #endif  /* M_GPIO_INTERFACE_H */
