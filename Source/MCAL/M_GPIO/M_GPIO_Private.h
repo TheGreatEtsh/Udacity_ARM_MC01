@@ -119,7 +119,6 @@
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
  *********************************************************************************************************************/
-/*#define CLK_GTE_CTRL_VALUE (0b##PORTF_CLK_GTE_CTRL##PORTE_CLK_GTE_CTRL##PORTD_CLK_GTE_CTRL##PORTC_CLK_GTE_CTRL##PORTB_CLK_GTE_CTRL##PORTA_CLK_GTE_CTRL)*/
 
 #define CLK_GTE_CTRL_VALUE BIT_CONC(0,0,PORTF_CLK_GTE_CTRL,PORTE_CLK_GTE_CTRL,PORTD_CLK_GTE_CTRL,PORTC_CLK_GTE_CTRL,PORTB_CLK_GTE_CTRL,PORTA_CLK_GTE_CTRL)
 /**********************************************************************************************************************

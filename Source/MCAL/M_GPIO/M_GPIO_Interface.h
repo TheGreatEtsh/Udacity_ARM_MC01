@@ -17,7 +17,7 @@
  *********************************************************************************************************************/
 #include "StandardTypes.h"
 #include "L_BitMath.h"
-
+#include "M_GPIO_Configurations.h"
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
@@ -91,7 +91,7 @@
 /*
  * Choose DIO, or Alternative Function Select check data sheet page 1351
  */
-typedef enum Port_PinModeType {
+typedef enum {
 	DIO = 0,
 	U0Rx = 1,
 	U0Tx = 1,
@@ -216,7 +216,7 @@ typedef enum Port_PinModeType {
 /*
  * GPIO_INPUT OR GPIO_OUTPUT 
  */
-typedef enum Port_PinDirection {
+typedef enum {
 	GPIO_INPUT = 0,
 	GPIO_OUTPUT
 }Port_PinDirection;  
@@ -224,7 +224,7 @@ typedef enum Port_PinDirection {
 /*
  * GPIO_LOW OR GPIO_HIGH
  */
-typedef enum Port_Pinlevel {
+typedef enum {
 	GPIO_LOW = 0,
 	GPIO_HIGH
 }Port_Pinlevel;
@@ -232,8 +232,8 @@ typedef enum Port_Pinlevel {
 /*
  * GPIO_PULLDOWN, GPIO_PULLUP OR GPIO_OPENDRAIN
  */
-typedef enum Port_PinInternalAttach {
-	GPIO_PULLDOWN = 0,
+typedef enum  {
+	GPIO_PULLDOWN = 1,
 	GPIO_PULLUP,
 	GPIO_OPENDRAIN
 }Port_PinInternalAttach;
@@ -241,26 +241,13 @@ typedef enum Port_PinInternalAttach {
 /*
  * GPIO_2mA, GPIO_4mA OR GPIO_8mA
  */
-typedef enum Port_PinOutputCurrent {
+typedef enum {
 	GPIO_2mA = 2,
 	GPIO_4mA = 4,
 	GPIO_8mA = 8
 }Port_PinOutputCurrent;
 
 
-typedef struct Pin_ConfigType {
-	u8_t										au8_PinName;				/*PA0, PA1,... Follow this way*/
-	Port_PinModeType				PinModeType;				/*DIO, or Alternative Function Select check data sheet page 1351*/
-	Port_PinDirection				PinDirection;				/*GPIO_INPUT OR GPIO_OUTPUT*/
-	Port_PinInternalAttach	PinInternalAttach;	/*GPIO_PULLDOWN,  GPIO_PULLUP OR GPIO_OPENDRAIN*/
-	Port_PinOutputCurrent		PinOutputCurrent;		/*GPIO_2mA, GPIO_4mA OR GPIO_8mA*/
-}Pin_ConfigType;
-
-Pin_ConfigType		LED0;
-LED0.au8_PinName			= PA0;
-LED0.PinModeType			= DIO;
-LED0.PinDirection			= GPIO_OUTPUT;
-LED0.PinOutputCurrent		= GPIO_2mA;
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
  *********************************************************************************************************************/
@@ -270,8 +257,21 @@ LED0.PinOutputCurrent		= GPIO_2mA;
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
 
- void M_GPIO_init(Pin_ConfigType* ConfigPtr);
+ 
+/**
+ * @brief This function is used to initialize a specific pin make sure to enable clock's gate to its port from the Configurations file
+ * @options:	1- PinName: PA0, PA1,... Follow this way		
+ *				2- PinModeType: DIO, or alternative function Select check data sheet page 1351
+ *				3- PinDirection: GPIO_INPUT, or GPIO_OUTPUT 	
+ *				4- PinInternalAttach: GPIO_PULLDOWN,  GPIO_PULLUP, or GPIO_OPENDRAIN, or 0
+ *				5- PinOutputCurrent: GPIO_2mA, GPIO_4mA, or GPIO_8mA
+ * @param au8_PinName, PinModeType, PinDirection, PinInternalAttach, PinOutputCurrent
+ */
+void M_GPIO_pinInit(u8_t au8_PinName, Port_PinModeType PinModeType, Port_PinDirection PinDirection, Port_PinInternalAttach PinInternalAttach, Port_PinOutputCurrent PinOutputCurrent);
 
+void M_GPIO_pinWrite(u8_t au8_pinName, Port_Pinlevel PinLevel);
+
+u8_t M_GPIO_pinRead(u8_t au8_pinName);
 
 #endif  /* M_GPIO_INTERFACE_H */
 
